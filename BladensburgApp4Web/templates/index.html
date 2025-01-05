@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Roll Sheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .dialog {
+            width: 318px;
+            height: 650px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .input, .date-edit, .time-edit {
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button.secondary {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="dialog">
+        <h2>Roll Sheet</h2>
+        <div class="label">Student Name</div>
+        <select class="input" name="comboBoxStudentName"></select>
+        <div class="label">Date</div>
+        <input type="date" class="date-edit" name="dateEdit">
+        <div class="label">Sign In</div>
+        <input type="time" class="time-edit" name="timeInEdit">
+        <input type="text" class="input" name="textParentInEdit" placeholder="Dropped off by">
+        <button class="button" type="button">Sign In</button>
+        <div class="label">Sign Out</div>
+        <input type="time" class="time-edit" name="timeOutEdit">
+        <input type="text" class="input" name="textParentOutEdit" placeholder="Picked up by">
+        <button class="button secondary" type="button">Sign Out</button>
+        <button class="button" type="button">Add New Student</button>
+        <button class="button secondary" type="button">Quit</button>
+    </div>
+</body>
+</html>

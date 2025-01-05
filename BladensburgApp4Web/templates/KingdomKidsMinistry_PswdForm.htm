@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .dialog {
+            width: 224px;
+            height: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .text-edit {
+            width: 100%;
+            height: 31px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .button-box {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button.secondary {
+            background-color: #f44336;
+        }
+        .flash {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="dialog">
+        <h2>Enter Password</h2>
+        <div class="label">Password to add new students</div>
+        <form method="POST">
+            <textarea class="text-edit" name="txtPassword"></textarea>
+            <div class="button-box">
+                <button class="button" type="submit">Ok</button>
+                <a href="/KingdomKidsMinistry_RollsheetForm.htm" class="button secondary">Cancel</a>
+            </div>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash">{{ messages[0] }}</div>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

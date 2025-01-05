@@ -1,0 +1,3 @@
+title = BladensburgAppwKivy
+author = Marcus McElhaney
+orientation = portrait

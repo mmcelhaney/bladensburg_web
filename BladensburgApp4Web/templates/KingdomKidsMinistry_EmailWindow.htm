@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send E-mail to all Parents</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .dialog {
+            width: 400px;
+            height: 350px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .text-edit {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .button {
+            display: block;
+            width: 100px;
+            height: 30px;
+            margin: 10px auto;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button.secondary {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="dialog">
+        <h2>Send E-mail to all Parents</h2>
+        <form method="POST">
+            <div class="label">From</div>
+            <input type="email" name="txtfromEmail" width="100%"><br />
+            <textarea class="text-edit" name="txtEmailText"></textarea><br />
+            <button type="submit" name="send_email" class="button">Send E-mail</button>
+            <button type="submit" name="return_to_registry" class="button secondary">Return to Registry</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash">{{ messages[0] }}</div>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
